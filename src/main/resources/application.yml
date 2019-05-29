@@ -1,0 +1,26 @@
+spring:
+  profiles:
+    active: dev #选用开发环境配置文件application-dev.yml
+  redis:
+    host: 127.0.0.1
+    password:
+    database: 0
+    timeout: PT0M10S
+    jedis:
+      pool.max-active: 200
+      pool.max-idle: 50
+      pool.max-wait: PT-1S
+      pool.min-idle: 10
+
+server:
+  port: 80
+  tomcat:
+    uri-encoding: utf-8
+    max-threads: 1000
+    max-connections: 900
+    min-spare-threads: 100
+    accesslog:
+      pattern: '%{X-Forwarded-For}i %h %l %u %t "%r" %s %b %T'
+      enabled: false
+      directory: ${user.dir}/logs
+      prefix: access.${HOST:127.0.0.1}.${server.port:8080}

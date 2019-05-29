@@ -1,0 +1,7 @@
+verify-code: 1234
+uuid: ${random.uuid}
+
+app:
+  access:
+    max-count: 2000
+    seconds: 2
