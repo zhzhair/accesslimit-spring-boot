@@ -1,9 +1,5 @@
 package com.example.demo.util;
 
-import com.example.demo.configuration.Constant;
-
-import javax.annotation.PostConstruct;
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
@@ -78,11 +74,4 @@ public class WebUtil {
         return stringBuilder.toString().toUpperCase().replace("-","");
     }
 
-    @Resource
-    private Constant constant;
-    private static Constant constants;
-    @PostConstruct
-    public void init(){
-        constants = constant;
-    }
 }
